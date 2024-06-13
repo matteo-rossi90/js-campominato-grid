@@ -9,12 +9,15 @@ ed emetto un messaggio in console con il numero della cella cliccata */
 //selezionare il pulsante che consentirà di visualizzare la griglia di gioco
 const playButton = document.getElementById("btn");
 
+//selezionare il contenitore
+const container = document.getElementById("grid");
+
 //creare un evento che al click dell'utente sul pulsante faccia visualizzare la griglia
 playButton.addEventListener("click",
     function(){
 
-        //selezionare il contenitore
-        const container = document.getElementById("grid");
+        // Rimuovere la griglia ed evitare che si ripeta al click del pulsante
+        container.innerHTML = '';
 
         //Ripetere per 100 volte la procedura di creazione delle varie celle
         for (let i = 1; i <= 100; i++) {
@@ -27,7 +30,7 @@ playButton.addEventListener("click",
                 function(){
 
                     //aggiungere la classe "clicked" e fare in modo che una cella cliccata cambi colore
-                    newDiv.classList.toggle("clicked");
+                    newDiv.classList.add("clicked");
 
                     //stampare in console il numero progressivo della cella
                     console.log(i);
@@ -51,9 +54,6 @@ function createElementClass(tag, classToAdd){
 
     //aggiungere ai blocchi una classe
     box.classList.add(classToAdd);
-
-    //aggiungere blocco ad un contenitore
-    container.append(box);
 
     return box;
 
