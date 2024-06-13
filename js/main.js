@@ -14,24 +14,31 @@ playButton.addEventListener("click",
     function(){
 
         //selezionare il contenitore
-
         const container = document.getElementById("grid");
 
         //Ripetere per 100 volte la procedura di creazione delle varie celle
-
-        for (let i = 0; i < 100; i++) {
-
-            console.log(i);
+        for (let i = 1; i <= 100; i++) {
 
             //creare un blocco "div" che abbia una classe "square"
             const newDiv = createElementClass("div", "square");
+
+            //creare un evento che fa in modo di cambiare colore alla cella al click del giocatore
+            newDiv.addEventListener("click", 
+                function(){
+
+                    //aggiungere la classe "clicked" e fare in modo che una cella cliccata cambi colore per
+                    //poi ritornare com'era quando il giocatore ne clicca un'altra
+                    newDiv.classList.toggle("clicked");
+
+                    //stampare in console il numero progressivo della cella
+                    console.log(i);
+                }
+            );
 
             //inserire i blocchi con la classe nel container individuato
             container.append(newDiv);
 
         };
-
-
 
     }
 );
