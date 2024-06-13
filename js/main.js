@@ -26,8 +26,7 @@ playButton.addEventListener("click",
             newDiv.addEventListener("click", 
                 function(){
 
-                    //aggiungere la classe "clicked" e fare in modo che una cella cliccata cambi colore per
-                    //poi ritornare com'era quando il giocatore ne clicca un'altra
+                    //aggiungere la classe "clicked" e fare in modo che una cella cliccata cambi colore
                     newDiv.classList.toggle("clicked");
 
                     //stampare in console il numero progressivo della cella
