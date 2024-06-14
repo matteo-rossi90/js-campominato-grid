@@ -37,8 +37,11 @@ playButton.addEventListener("click",
                 }
             );
 
+            newDiv.innerHTML = i;
+
             //inserire i blocchi con la classe nel container individuato
             container.append(newDiv);
+
 
         };
 
